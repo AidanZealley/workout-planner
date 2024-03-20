@@ -1,0 +1,172 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.25rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  .glitch {
+    --glitch-color: 199, 210, 254;
+    overflow: hidden;
+  }
+
+  .glitch span {
+    position: relative;
+    text-shadow:
+      0.1rem 0 0 rgba(var(--glitch-color), 0.45),
+      -0.6rem -0.8rem 0 rgba(var(--glitch-color), 0.25),
+      0.05rem 0.8rem 0 rgba(var(--glitch-color), 0.75);
+    animation:
+      glitch 725ms infinite,
+      wiggle 1s infinite;
+  }
+
+  .glitch span:before,
+  .glitch span:after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .glitch span:before {
+    animation:
+      glitch 500ms infinite,
+      wiggle 1s infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 35%, 0 35%);
+    transform: translate(-0.08rem, -0.06rem);
+    opacity: 0.75;
+  }
+
+  .glitch span:after {
+    animation:
+      glitch 375ms infinite,
+      wiggle 1s infinite;
+    clip-path: polygon(0 65%, 100% 65%, 100% 100%, 0 100%);
+    transform: translate(0.08rem, 0.06rem);
+    opacity: 0.75;
+  }
+
+  @keyframes wiggle {
+    1% {
+      transform: rotateX(20deg) skewX(45deg);
+    }
+    2% {
+      transform: rotateX(0deg) skewX(0deg);
+    }
+  }
+
+  @keyframes glitch {
+    0% {
+      text-shadow:
+        0.05rem 0 0 rgba(var(--glitch-color), 0.45),
+        -0.06rem -0.08rem 0 rgba(var(--glitch-color), 0.25),
+        0.05rem 0.08rem 0 rgba(var(--glitch-color), 0.75);
+    }
+    15% {
+      text-shadow:
+        0.05rem 0 0 rgba(var(--glitch-color), 0.45),
+        -0.06rem -0.08rem 0 rgba(var(--glitch-color), 0.25),
+        0.05rem 0.08rem 0 rgba(var(--glitch-color), 0.75);
+    }
+    16% {
+      text-shadow:
+        -0.05rem -0.05rem 0 rgba(var(--glitch-color), 0.45),
+        0.05rem 0.065rem 0 rgba(var(--glitch-color), 0.25),
+        -0.05rem -0.05rem 0 rgba(var(--glitch-color), 0.75);
+    }
+    49% {
+      text-shadow:
+        -0.05rem -0.05rem 0 rgba(var(--glitch-color), 0.45),
+        0.05rem 0.065rem 0 rgba(var(--glitch-color), 0.25),
+        -0.05rem -0.05rem 0 rgba(var(--glitch-color), 0.75);
+    }
+    50% {
+      text-shadow:
+        0.05rem 0.065rem 0 rgba(var(--glitch-color), 0.45),
+        0.06rem 0 0 rgba(var(--glitch-color), 0.25),
+        0 -0.08rem 0 rgba(var(--glitch-color), 0.75);
+    }
+    99% {
+      text-shadow:
+        0.05rem 0.065rem 0 rgba(var(--glitch-color), 0.45),
+        0.06rem 0 0 rgba(var(--glitch-color), 0.25),
+        0 -0.08rem 0 rgba(var(--glitch-color), 0.75);
+    }
+    100% {
+      text-shadow:
+        -0.05rem 0 0 rgba(var(--glitch-color), 0.45),
+        -0.05rem -0.08rem 0 rgba(var(--glitch-color), 0.25),
+        -0.08rem -0.05rem 0 rgba(var(--glitch-color), 0.75);
+    }
+  }
+}
