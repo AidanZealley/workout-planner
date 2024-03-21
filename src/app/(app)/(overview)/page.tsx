@@ -7,7 +7,6 @@ export default async function Home() {
       <div className="grid gap-12">
         <div className="grid grid-cols-2">
           <div className="grid gap-8">
-            {" "}
             <h2 className="font-display text-3xl uppercase">Today</h2>
           </div>
 
