@@ -10,7 +10,7 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import { Dumbbell, PlusSquare } from "lucide-react";
+import { Blocks, Dumbbell, PlusSquare } from "lucide-react";
 import Link from "next/link";
 
 export function AppNav() {
@@ -21,10 +21,10 @@ export function AppNav() {
           <NavigationMenuTrigger>Exercises</NavigationMenuTrigger>
           <AppNavItemContent>
             <AppNavActionLink
-              href="/exercises/create"
+              href="/exercises/add"
               icon={<PlusSquare className="h-6 w-6" />}
             >
-              Create Exercise
+              Add Exercise
             </AppNavActionLink>
             <AppNavLink href="/exercises" description="Manage your exercises.">
               All Exercises
@@ -36,10 +36,10 @@ export function AppNav() {
           <NavigationMenuTrigger>Workouts</NavigationMenuTrigger>
           <AppNavItemContent>
             <AppNavActionLink
-              href="/workouts/create"
-              icon={<PlusSquare className="h-6 w-6" />}
+              href="/workouts/builder"
+              icon={<Blocks className="h-6 w-6" />}
             >
-              Create Workout
+              Workout Builder
             </AppNavActionLink>
             <AppNavLink href="/workouts" description="Manage your workouts.">
               All Workouts
